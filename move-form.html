@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="../css/style.css">
+    <title>Reports</title>
+</head>
+<body>
+    <section id='Move'>
+    <button onclick="ArtworkByArtwork()">Artwork By Artwork Name</button>
+        <div class="selection" id=ArtworkByArtwork>
+            <h4>Artwork By Artwork Name:</h4>
+                <form action="/move-form-2" method="POST">
+                    <section class="By Art Name">
+                            <label for="Title">Artwork Name</label>
+                            <input type="text" class="form-control" name="Title" id="Title"  maxlength="10" placeholder="Artwork Name">
+                        <br>
+                            <input type="hidden" id= ButtonID name="ButtonID" value="Artwork by Artwork Name" >  
+                            <input type="submit" value="Submit">
+                    </section> 
+                </form>
+        </div>
+    <button onclick="ArtworkByLocation()">Artwork By Location</button>
+        <div class="selection" id=ArtworkByLocation>
+            <h4>Artwork By Location:</h4>
+                <form action="/move-form-2" method="POST">
+                    <section class="By Location">
+                            <label for="City">City</label>
+                                <select name="City" id="City">
+                                    <option value="Anchorage">Anchorage</option>
+                                    <option value="Nome">Nome</option>
+                                </select>
+                        <br>
+                        <br>
+                            <label for="Building">Building</label>
+                                <select name="Building" id="Building">
+                                    <option value="Anchorage1">Anchorage1</option>
+                                    <option value="Nome1">Nome1</option>
+                                </select>
+                        <br>
+                        <br>
+                            <label for="Room">Room</label>
+                            <input type="number" class="form-control" name="Room" id="Room" min="1" max="9999999" placeholder="Room Number">
+                        <br>
+                            <input type="hidden" id= ButtonID name="ButtonID" value="Artwork By Location Name" >
+                            <input type="submit" value="Submit">
+                    </section>  
+                </form>
+        </div>  
+    </section>
+    <script>
+        function ArtworkByArtwork() {
+        var x = document.getElementById("ArtworkByArtwork");
+        if (x.style.display === "none") {
+            x.style.display = "block";} 
+        else {
+            x.style.display = "none";}}
+        </script>
+    
+    <script>
+        function ArtworkByLocation() {
+        var x = document.getElementById("ArtworkByLocation");
+        if (x.style.display === "none") {
+            x.style.display = "block";} 
+        else {
+            x.style.display = "none";}}
+        </script>
+</body>
+</html>
+                 

@@ -1,0 +1,267 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="../css/style.css">
+    <title>Move Form</title>
+</head>
+<body>
+  <header>
+    <nav>
+      <a href="http://localhost:5000/">
+        <div class="logo"></div>
+        </a>
+      </nav>
+  </header>
+    
+    <h1 align="center">Move Artwork</h1>
+
+
+      <button class="btn" data-modal="NewLocation">New Location</button>
+      <br>
+      <br>
+      <button class="btn" data-modal="Gift">Gift Artwork</button>
+      <br>
+      <br>
+      <button class="btn" data-modal="Loan">Loan Artwork</button>
+      <br>
+      <br>
+      <button class="btn" data-modal="Return">Return Loan</button>
+
+
+    <div id="NewLocation" class="modal">
+      <div class="modal-content">
+        <div class="popup">
+          <a class="close">&times;</a>
+          <form method="POST" action="/">
+          <section class="Art New Location Information">
+            <h2>New Location</h2>
+            <div>
+              <label for="ArtID">Art ID</label>
+              <input type="number" name="ArtID" id="ArtID" min="0" max="9999999">
+              <br>
+              <label for="City">City</label>
+              	<select name="City" id="City" required>
+                	<option value="Anchorage">Anchorage</option>
+                	<option value="Nome">Nome</option>
+                </select>
+             <br>
+             <br>
+              <label for="Building">Building</label>
+                <select name="Building" id="Building" required>
+                	<option value="Anchorage">Anchorage1</option>
+                	<option value="Nome">Nome1</option>
+                </select>
+            <br>
+            <br>
+
+              <label for="Floor">Floor</label>
+               <input type="number" name="Floor" id="Floor" min="1" max="9999999">
+               <label for="Room">Room</label>
+               <input type="number" name="Room" id="Room" min="1" max="9999999">
+              <br>
+              <label for="Description">Description</label>
+               <textarea id="Description" name="Description" rows="3" cols="40" placeholder="Additional Location Details"></textarea>
+
+              <input type="hidden" id= ButtonID name="ButtonID" value="1" >
+              <button type="submit" href="/">Submit</button>
+            </div>
+            </section>
+          </form>
+        </div>
+      </div>
+    </div>
+<!--Gift Artwork-->
+    <div id="Gift" class="modal">
+      <div class="modal-content">
+        <div class="popup">
+          <a class="close">&times;</a>
+          <form method="POST" action="/">
+          <section class="Gift">
+            <h2>Gift Artwork</h2>
+            <div>
+                    <label for="ArtID">Art ID</label>
+                    <input type="number" name="ArtID" id="ArtID" min="0" max="9999999">
+                <br>
+                                <label for="Date">Gift Date</label>
+                    <input type="date" name="Acquiredt" id="Acquiredt">
+                <br>
+                            <label for="Description">Description</label>
+                    <textarea id="Description" name="Description" rows="3" cols="40"></textarea>
+            </section>
+        <h4>Recipient Information:</h4>
+            <section class="Recipient Information">
+                    <label for="FName">First name</label>
+                    <input type="text" name="Fname" id="Fname" minlength="1" maxlength="50">
+                <br>
+                      <label for="LName">Last name</label>
+                    <input type="text" name="Lname" id="Lname" minlength="1" maxlength="50">
+                <br>
+                        <label for="Phone">Phone number (with area code)</label>
+                    <input type="tel" name="Phone" id="Phone" pattern="[0-9]{3}-[0-9]{3}-[0-9]{4}">
+                <br>
+                    <label for="Email">Email</label>
+                    <input type="text" name="Email" id="Email">
+                <br>
+
+                    <label for="Address1">Primary address</label>
+                    <input type="text" name="Address1" id="Address1">
+                <br>
+                    <label for="Address2">Alternate address</label>
+                    <input type="text" name="Address2" id="Address2">
+                <br>
+                    <label for="City">City</label>
+                    <input type="text" name="City" id="City" maxlength="50">
+                <br>
+                    <label for="State">State</label>
+                    <input type="text" name="State" id="State" minlength="3" maxlength="50">
+                <br>
+                    <label for="Zip">Zip code</label>
+                    <input type="text" name="Zip" id="Zip" minlength="5" maxlength="5">
+                <br>
+                    <input type="hidden" id= ButtonID name="ButtonID" value="2" >
+                    <button type="submit" href="/">Submit</button>
+              </section>
+            </div>
+          </form>
+        </div>
+      </div>
+  </div>
+<!--Loan Artwork-->
+    <div id="Loan" class="modal">
+      <div class="modal-content">
+        <div class="popup">
+          <a class="close">&times;</a>
+          <form method="POST" action="/">
+          <section class="Loan Artwork">
+            <h2>Loan Artwork</h2>
+            <div>
+              <section class="Loan Date">
+                      <label for="ArtID">Art ID</label>
+                      <input type="number" name="ArtID" id="ArtID" min="0" max="9999999">
+                  <br>
+                      <label for="Date">Loan Date Out</label>
+                      <input type="date" name="Acquiredt" id="Acquiredt">
+                  <br>
+                      <label for="Date">Requested Return Date</label>
+                      <input type="date" name="Acquiredt" id="Acquiredt">
+                  <br>
+                      <label for="Description">Description</label>
+                      <textarea id="Description" name="Description" rows="3" cols="40"></textarea>
+              </section>
+          <h4>Recipient Information:</h4>
+              <section class="Recipient Information">
+                      <label for="FName">First name</label>
+                      <input type="text" name="Fname" id="Fname" minlength="1" maxlength="50">
+                  <br>
+                      <label for="LName">Last name</label>
+                      <input type="text" name="Lname" id="Lname" minlength="1" maxlength="50">
+                  <br>
+                      <label for="Phone">Phone number (with area code)</label>
+                      <input type="tel" name="Phone" id="Phone" pattern="[0-9]{3}-[0-9]{3}-[0-9]{4}">
+                  <br>
+                      <label for="Email">Email</label>
+                      <input type="text" name="Email" id="Email">
+                  <br>
+                      <label for="Address1">Primary address</label>
+                      <input type="text" name="Address1" id="Address1">
+                  <br>
+                      <label for="Address2">Alternate address</label>
+                      <input type="text" name="Address2" id="Address2">
+                  <br>
+                      <label for="City">City</label>
+                      <input type="text" name="City" id="City" maxlength="50">
+                  <br>
+                      <label for="State">State</label>
+                      <input type="text" name="State" id="State" minlength="3" maxlength="50">
+                  <br>
+                      <label for="Zip">Zip code</label>
+                      <input type="text" name="Zip" id="Zip" minlength="5" maxlength="5">
+                  <br>
+                      <input type="hidden" id= ButtonID name="ButtonID" value="3" >
+                      <button type="submit" href="/">Submit</button>
+                    </section>
+                  </section>
+                  </div>
+                </form>
+              </div>
+          </div>
+        </div>
+      </div>
+<!--Return Artwork-->
+    <div id="Return" class="modal">
+      <div class="modal-content">
+        <div class="popup">
+          <a class="close">&times;</a>
+          <form method="POST" action="/">
+          <section class="Return">
+              <h2>Return Artwork</h2>
+            <div>
+              <section class="Return">
+              <label for="ArtID">Art ID</label>
+              <input type="number" name="ArtID" id="ArtID" min="0" max="9999999">
+                <br>
+                    <label for="Date">Return Date</label>
+                    <input type="date" name="Acquireddt" id="Acquireddt">
+            </section>
+              <h4>New Artwork Location:</h4>
+            <section class="Art New Location Information">
+                    <label for="City">City</label>
+                        <select name="City" id="City" required>
+                            <option value="Anchorage">Anchorage</option>
+                            <option value="Nome">Nome</option>
+                        </select>
+                <br>
+                <br>
+                    <label for="Building">Building</label>
+                        <select name="Building" id="Building" required>
+                            <option value="Anchorage">Anchorage1</option>
+                            <option value="Nome">Nome1</option>
+                        </select>
+                <br>
+                <br>
+                    <label for="Floor">Floor</label>
+                    <input type="number" name="Floor" id="Floor" min="1" max="9999999">
+                <br>
+                    <label for="Room">Room</label>
+                    <input type="number" name="Room" id="Room" min="1" max="9999999">
+                <br>
+                    <label for="Description">Any extra information?</label>
+                    <textarea id="Description" name="Description" rows="3" cols="40"></textarea>
+                <br>
+                    <input type="hidden" id= ButtonID name="ButtonID" value="4" >
+                    <button type="submit" href="/">Submit</button>
+                  </section>
+                </div>
+              </section>
+            </form>
+          </div>
+       </div>
+    </div>
+
+ <script>
+      var modalBtns = [...document.querySelectorAll(".btn")];
+      modalBtns.forEach(function(btn){
+        btn.onclick = function() {
+          var modal = btn.getAttribute('data-modal');
+          document.getElementById(modal).style.display = "block";
+        }
+      });
+
+      var closeBtns = [...document.querySelectorAll(".close")];
+      closeBtns.forEach(function(btn){
+        btn.onclick = function() {
+          var modal = btn.closest('.modal');
+          modal.style.display = "none";
+        }
+      });
+
+      window.onclick = function(event) {
+        if (event.target.className === "modal") {
+          event.target.style.display = "none";
+        }
+      }
+    </script>
+  </body>
+</html>
