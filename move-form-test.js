@@ -8,7 +8,7 @@ function MoveResults(req,res) {
                                                     And Location.Building= '${req.Building}' 
                                                     And Location.Room= '${req.Room}';`
     var sqlQuery2 = `Update Art
-                    Set LocationID = 1002
+                    Set LocationID = 1035
                     Where ArtID = ${req.ArtID}`
     var sql= require("mssql");
 
@@ -27,7 +27,12 @@ function MoveResults(req,res) {
                 if (err) console.log(err.message)
                 sql.close();			
             });
+            con.query(sql, function (err, result) {
+                if (err) throw err;
+                console.log(result.affectedRows + " record(s) updated");
+              });
         });}
+    NewLocation(req);
                     
 };
 module.exports=MoveResults 
