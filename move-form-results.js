@@ -70,21 +70,19 @@ function MoveResults(req,res) {
     Loan(req);
 
     function Return(req, res) {
+        var sqlQuery9 = `INSERT INTO Loan(ReturnDate) VALUES ('${date}');`;
+        var sqlQuery10 = `Update Art Set Status = Stored Where ArtID = ${req.ArtID}`;
+        var sqlQuery11 = 'INSERT INTO Location()'
+
         sql.connect(config, function (err) {
             if (err) console.log(err.message);
             let sqlRequest =  new sql.Request();	
-            sqlRequest.query(sqlQuery1, sqlQuery2, function (err,data) {	
+            sqlRequest.query(sqlQuery9, sqlQuery10, sqlQuery11, function (err,data) {	
                 if (err) console.log(err.message)
                 sql.close();			
             });
         });}
     Return(req);
-
-
-
-
-
-
 
 
     var h='<h1 class="logo"></h1><h2>The data was added to the database.</h2>';
